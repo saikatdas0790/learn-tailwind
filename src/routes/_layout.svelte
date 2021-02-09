@@ -1,13 +1,17 @@
-<script lang="ts">
-  import Nav from "../components/Nav.svelte";
+<svelte:head>
+  <title>Learn Tailwind</title>
+</svelte:head>
 
-  export let segment: string;
-</script>
-
-<style>
-</style>
-
-<Nav {segment} />
+<nav>
+  <ul>
+    <li>
+      <a href="/core-concepts">Core Concepts</a>
+      <ul>
+        <li><a href="/core-concepts/utility-first">Utility First</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 <main>
   <slot />

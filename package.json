@@ -3,13 +3,14 @@
   "description": "TODO",
   "version": "0.0.1",
   "scripts": {
-    "dev": "npm run watch:tailwind & sapper dev",
+    "dev": "npm run tailwind:dev && npm run sapper:dev",
     "start": "node __sapper__/build",
     "validate": "svelte-check --ignore src/node_modules/@sapper",
-    "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",
-    "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
-    "build": "npm run build:tailwind && sapper build --legacy",
-    "export": "npm run build:tailwind && sapper export"
+    "sapper:dev": "sapper dev",
+    "tailwind:dev": "postcss static/tailwind.css -o static/index.css",
+    "tailwind:prod": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
+    "build": "npm run tailwind:prod && sapper build --legacy",
+    "export": "npm run tailwind:prod && sapper export"
   },
   "dependencies": {
     "compression": "^1.7.4",
